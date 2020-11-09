@@ -18,18 +18,20 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/classes/Product.php');
 
         <h1>Тестовое задание для PHP разработчиков. Страница добавления товара</h1>
         <?php
-        if(!empty($_POST)){
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (!empty($_POST['name']) && !empty($_POST['price'])) {
 
-            $product = new Product();
+                $product = new Product();
 
-            if( $product->addProduct($_POST['name'], $_POST['price'])){
-                ?>
-                <div class="row">
-                    <div class="alert alert-primary" role="alert">
-                        <?=$product->out_msg?>
+                if ($product->addProduct($_POST['name'], $_POST['price'])) {
+                    ?>
+                    <div class="row">
+                        <div class="alert alert-primary" role="alert">
+                            <?= $product->out_msg ?>
+                        </div>
                     </div>
-                </div>
-                <?
+                    <?
+                }
             }
         }
         ?>
