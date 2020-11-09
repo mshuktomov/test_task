@@ -18,10 +18,7 @@ class DB{
             'developer_test'
         );
 
-
         $this->mysqli->set_charset("utf8");
-//        $char = $this->mysqli->character_set_name();
-//        var_dump($char);
 
         return $this->mysqli;
     }
