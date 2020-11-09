@@ -68,7 +68,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/classes/Product.php');
                     <div class="m-1  p-3 border rounded">
                         <p>Товар #<?=$item['id']?></p>
                         <h4 class="group inner list-group-item-heading"><?=$item['name']?></h4>
-                        <p class="group inner list-group-item-text">Price: <strong><?=$item['price']?></strong>&nbsp;руб.</p>
+                        <p class="group inner list-group-item-text">Цена: <strong><?=$item['price']?></strong>&nbsp;руб.</p>
                     </div>
                 </div>
             <?endforeach;?>
